@@ -8,7 +8,7 @@ export default function Footer() {
           <div className={styles.logoSection}>
             <h3 className={styles.logo}>Emaús</h3>
             <p className={styles.tagline}>
-              "Caminando juntos hacia la luz"
+              &ldquo;Caminando juntos hacia la luz&rdquo;
             </p>
           </div>
           
@@ -52,7 +52,7 @@ export default function Footer() {
             <p>&copy; 2024 Comunidad Religiosa Emaús. Todos los derechos reservados.</p>
           </div>
           <div className={styles.inspiration}>
-            <p>"Permanezcan en mi amor" - Juan 15:9</p>
+            <p>&ldquo;Permanezcan en mi amor&rdquo; - Juan 15:9</p>
           </div>
         </div>
       </div>

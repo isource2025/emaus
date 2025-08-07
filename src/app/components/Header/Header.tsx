@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import styles from './Header.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,13 +38,13 @@ export default function Header() {
           </div>
           
           <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
-            <a 
+            <Link 
               href="/" 
               className={styles.navLink}
               onClick={() => setIsMenuOpen(false)}
             >
               Inicio
-            </a>
+            </Link>
             <a 
               href="#about" 
               className={styles.navLink}

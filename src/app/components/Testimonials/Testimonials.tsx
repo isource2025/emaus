@@ -55,7 +55,7 @@ export default function Testimonials() {
         
         <div className={styles.testimonialContainer}>
           <div className={styles.testimonialCard}>
-            <div className={styles.quote}>"</div>
+            <div className={styles.quote}>&ldquo;</div>
             <p className={styles.testimonialText}>
               {testimonials[currentTestimonial].text}
             </p>

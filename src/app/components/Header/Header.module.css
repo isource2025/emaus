@@ -1,0 +1,233 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  opacity: 1;
+  transition: opacity var(--transition-normal);
+  backdrop-filter: blur(3px);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(44, 82, 130, 0.1);
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-soft);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) 0;
+  height: 80px;
+}
+
+.logo {
+  flex-shrink: 0;
+  padding: var(--space-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.logoImage {
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover .logoImage {
+  transform: rotate(10deg);
+}
+
+.logoText {
+  font-size: 28px;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover .logoText {
+  transform: scale(1.03);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  margin-right: var(--space-md);
+}
+
+.navLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all var(--transition-normal);
+  position: relative;
+  padding: var(--space-sm) var(--space-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.ctaLink {
+  background: linear-gradient(135deg, var(--color-accent), #3182CE);
+  color: var(--color-white) !important;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-normal);
+  margin-left: var(--space-sm);
+}
+
+.ctaLink:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.ctaLink::after {
+  display: none;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-primary);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(1) {
+  margin-bottom: 6px;
+}
+
+.hamburger span:nth-child(2) {
+  margin-bottom: 6px;
+}
+
+.hamburgerOpen span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .headerContent {
+    padding: var(--space-sm) 0;
+    height: 70px;
+  }
+  
+  .logoText {
+    font-size: 24px;
+  }
+  
+  .mobileMenuButton {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px var(--space-xl) var(--space-xl);
+    gap: var(--space-lg);
+    box-shadow: var(--shadow-medium);
+    transition: right var(--transition-normal);
+    z-index: 999;
+    margin-right: 0;
+  }
+  
+  .navOpen {
+    right: 0;
+  }
+  
+  .navLink {
+    font-size: 18px;
+    padding: var(--space-sm) 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(44, 82, 130, 0.1);
+  }
+  
+  .ctaLink {
+    margin-top: var(--space-md);
+    text-align: center;
+    border-radius: var(--border-radius);
+    border-bottom: none;
+    padding: var(--space-md) var(--space-lg);
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    font-size: 22px;
+  }
+}

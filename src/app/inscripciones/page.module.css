@@ -1,0 +1,161 @@
+.inscripcion {
+  background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%);
+  padding: 120px 0 80px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 42px;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+  position: relative;
+  font-weight: 700;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  border-radius: 2px;
+}
+
+.description {
+  font-size: 20px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 48px;
+  font-weight: 500;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.optionCard {
+  background: var(--color-white);
+  padding: 40px 30px;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(44, 82, 130, 0.1);
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.optionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.optionCard h2 {
+  font-size: 28px;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.optionCard p {
+  font-size: 18px;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.dates {
+  font-weight: 600;
+  color: var(--color-text) !important;
+  font-size: 16px !important;
+  background: rgba(66, 153, 225, 0.1);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 24px !important;
+}
+
+.optionButton {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: var(--color-white);
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+}
+
+.optionButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  color: var(--color-white);
+}
+
+/* Tablet Styles */
+@media (max-width: 900px) {
+  .options {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .optionCard {
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 36px;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .inscripcion {
+    padding: 100px 0 60px;
+  }
+  
+  .content {
+    padding: 0 20px;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+  
+  .optionCard {
+    padding: 30px 20px;
+  }
+  
+  .optionCard h2 {
+    font-size: 24px;
+  }
+  
+  .optionCard p {
+    font-size: 16px;
+  }
+  
+  .optionButton {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}

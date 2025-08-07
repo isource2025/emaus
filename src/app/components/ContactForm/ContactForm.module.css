@@ -1,0 +1,312 @@
+.contactForm {
+  background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%);
+  padding: var(--space-3xl) 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaSection {
+  text-align: center;
+  background: var(--color-white);
+  padding: var(--space-3xl) var(--space-2xl);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(44, 82, 130, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.title {
+  font-size: 42px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  position: relative;
+  font-weight: 700;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(66, 153, 225, 0.3);
+}
+
+.description {
+  font-size: 20px;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.subdescription {
+  font-size: 16px;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form {
+  background: var(--color-white);
+  padding: var(--space-2xl) var(--space-2xl);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(44, 82, 130, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.formGroup {
+  margin-bottom: var(--space-xl);
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--space-md) var(--space-md);
+  border: 2px solid rgba(44, 82, 130, 0.2);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-family: inherit;
+  transition: all var(--transition-normal);
+  background: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) inset;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.15);
+  transform: translateY(-2px);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: var(--color-white);
+  padding: var(--space-lg) var(--space-2xl);
+  border-radius: var(--border-radius-large);
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-medium);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-lg);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.5s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-large);
+  color: var(--color-white);
+}
+
+.ctaButton:hover::after {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid var(--color-white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.note {
+  font-size: 14px;
+  color: var(--color-text-light);
+  text-align: center;
+  line-height: 1.5;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.successMessage {
+  text-align: center;
+  background: var(--color-white);
+  padding: var(--space-3xl) var(--space-2xl);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(44, 82, 130, 0.1);
+}
+
+.successIcon {
+  font-size: 64px;
+  margin-bottom: var(--space-lg);
+  color: var(--color-accent);
+  animation: fadeInScale 1s ease;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.successMessage h2 {
+  font-size: 32px;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.successMessage p {
+  font-size: 18px;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .contactForm {
+    padding: var(--space-2xl) 0;
+  }
+
+  .content {
+    padding: 0 var(--container-padding-mobile);
+  }
+  
+  .ctaSection {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-bottom: var(--space-md);
+    padding: 0 var(--space-xs);
+  }
+  
+  .subdescription {
+    font-size: 15px;
+    margin-bottom: var(--space-xl);
+    padding: 0 var(--space-xs);
+  }
+  
+  .form {
+    padding: var(--space-2xl) var(--space-lg);
+    margin: 0;
+  }
+  
+  .formGroup {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .label {
+    font-size: 15px;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .input,
+  .textarea {
+    padding: var(--space-md) var(--space-md);
+    font-size: 16px;
+  }
+  
+  .ctaButton {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .privacy {
+    font-size: 13px;
+    padding: 0 var(--space-xs);
+    line-height: 1.4;
+  }
+  
+  .successMessage {
+    padding: var(--space-2xl) var(--space-lg);
+    margin: 0;
+  }
+  
+  .successIcon {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .successMessage h2 {
+    font-size: 24px;
+    margin-bottom: var(--space-md);
+  }
+  
+  .successMessage p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .formHeader {
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .title {
+    font-size: 26px;
+  }
+  
+  .subtitle {
+    font-size: 15px;
+  }
+}
